@@ -154,6 +154,9 @@ function loaded(){
 		var origText = elem.title || elem.textContent || elem.innerText,
 			href = elem.href;
 
+        // Trim twit text
+        origText = origText.replace(/^\s+|\s+$/g, '') ;
+
 		elem.innerHTML = "<span>" + RetweetJS.link_text + "</span>";
 		elem.title = "";
 		elem.href = "http://twitter.com/home?status=" +
